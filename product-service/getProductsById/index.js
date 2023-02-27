@@ -8,12 +8,14 @@ module.exports.handler = async (event) => {
   if (product) {
     return {
       statusCode: 200,
-      body: product,
+      body: JSON.stringify(product),
     };
   } else {
     return {
       statusCode: 404,
-      body: "NOT FOUND!",
+      body: JSON.stringify({
+        message: "NOT FOUND!",
+      }),
     }
   }
 };
