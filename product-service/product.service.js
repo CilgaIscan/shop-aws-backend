@@ -8,6 +8,10 @@ class ProductService {
   getById(id) {
     return ProductRepo.getById(id);
   }
+
+  create(product) {
+    return ProductRepo.put(product);
+  }
 }
 
 module.exports.ProductService = new ProductService();

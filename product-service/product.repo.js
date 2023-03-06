@@ -24,6 +24,13 @@ class ProductRepo {
     .then((data) => data.Item);
   }
 
+  async _putItem(tableName, item) {
+    await this.awsClient.put({
+      TableName: tableName,
+      Item: item,
+    }).promise();
+  }
+
   async scanAllWithStocks() {
     const products = await this._scanTable(process.env.PRODUCTS_TABLE_NAME);
     const stocks = await this._scanTable(process.env.STOCKS_TABLE_NAME);
@@ -56,6 +63,29 @@ class ProductRepo {
       ...product,
       count: stock.count,
     }
+  }
+
+  async put(product) {
+    const productId = `${AWS.util.uuid.v4()}`;
+    
+    const newProduct = {
+      id: product.id || productId,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+    }
+    await this._putItem(process.env.PRODUCTS_TABLE_NAME, newProduct);
+
+    const newStock = {
+      product_id: newProduct.id,
+      count: product.count || 1,
+    }
+    await this._putItem(process.env.STOCKS_TABLE_NAME, newStock);
+
+    return {
+      ...newProduct,
+      count: newStock.count,
+    };
   }
 }
 

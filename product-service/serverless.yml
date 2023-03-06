@@ -17,6 +17,7 @@ provider:
             - dynamodb:Query
             - dynamodb:Scan
             - dynamodb:GetItem
+            - dynamodb:PutItem
           Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.PRODUCTS_TABLE_NAME}"
         - Effect: Allow
           Action:
@@ -28,6 +29,7 @@ provider:
             - dynamodb:Query
             - dynamodb:Scan
             - dynamodb:GetItem
+            - dynamodb:PutItem
           Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.STOCKS_TABLE_NAME}"
         - Effect: Allow
           Action:
@@ -43,6 +45,12 @@ functions:
     events:
       - httpApi:
           method: GET
+          path: /products
+  createProduct:
+    handler: createProduct.handler
+    events:
+      - httpApi:
+          method: POST
           path: /products
   getProductsById:
     handler: getProductsById.handler
