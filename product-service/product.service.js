@@ -1,4 +1,5 @@
 const { products } = require('./mockData');
+const { ProductRepo } = require('./product.repo');
 
 class ProductService {
   constructor() {
@@ -6,7 +7,7 @@ class ProductService {
   }
 
   getAll() {
-    return Promise.resolve(this.products);
+    return ProductRepo.scanAllWithStocks();
   }
 
   getById(id) {
