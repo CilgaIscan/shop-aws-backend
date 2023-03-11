@@ -1,4 +1,4 @@
-module.exports.products = [
+[
   {
     "count": 4,
     "description": "Short Product Description1",
@@ -55,4 +55,4 @@ module.exports.products = [
     "price": 15,
     "title": "ProductName"
   }
-];
+]

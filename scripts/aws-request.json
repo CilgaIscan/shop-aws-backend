@@ -1,0 +1,246 @@
+{
+  "stocks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80aa"
+          },
+          "count": {
+            "N": "4"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a0"
+          },
+          "count": {
+            "N": "6"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a2"
+          },
+          "count": {
+            "N": "7"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a1"
+          },
+          "count": {
+            "N": "12"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a3"
+          },
+          "count": {
+            "N": "7"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73348a80a1"
+          },
+          "count": {
+            "N": "8"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-48c5-9445-fc73c48a80a2"
+          },
+          "count": {
+            "N": "2"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": {
+            "S": "7567ec4b-b10c-45c5-9345-fc73c48a80a1"
+          },
+          "count": {
+            "N": "3"
+          }
+        }
+      }
+    }
+  ],
+  "products": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80aa"
+          },
+          "title": {
+            "S": "ProductOne"
+          },
+          "description": {
+            "S": "Short Product Description1"
+          },
+          "price": {
+            "N": "2.4"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a0"
+          },
+          "title": {
+            "S": "ProductNew"
+          },
+          "description": {
+            "S": "Short Product Description3"
+          },
+          "price": {
+            "N": "10"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a2"
+          },
+          "title": {
+            "S": "ProductTop"
+          },
+          "description": {
+            "S": "Short Product Description2"
+          },
+          "price": {
+            "N": "23"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a1"
+          },
+          "title": {
+            "S": "ProductTitle"
+          },
+          "description": {
+            "S": "Short Product Description7"
+          },
+          "price": {
+            "N": "15"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73c48a80a3"
+          },
+          "title": {
+            "S": "Product"
+          },
+          "description": {
+            "S": "Short Product Description2"
+          },
+          "price": {
+            "N": "23"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9345-fc73348a80a1"
+          },
+          "title": {
+            "S": "ProductTest"
+          },
+          "description": {
+            "S": "Short Product Description4"
+          },
+          "price": {
+            "N": "15"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-48c5-9445-fc73c48a80a2"
+          },
+          "title": {
+            "S": "Product2"
+          },
+          "description": {
+            "S": "Short Product Descriptio1"
+          },
+          "price": {
+            "N": "23"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {
+            "S": "7567ec4b-b10c-45c5-9345-fc73c48a80a1"
+          },
+          "title": {
+            "S": "ProductName"
+          },
+          "description": {
+            "S": "Short Product Description7"
+          },
+          "price": {
+            "N": "15"
+          }
+        }
+      }
+    }
+  ]
+}

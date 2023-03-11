@@ -1,16 +1,16 @@
-const { products } = require('./mockData');
+const { ProductRepo } = require('./product.repo');
 
 class ProductService {
-  constructor() {
-    this.products = products;
-  }
-
   getAll() {
-    return Promise.resolve(this.products);
+    return ProductRepo.scanAllWithStocks();
   }
 
   getById(id) {
-    return Promise.resolve(this.products.find((p) => p.id === id));
+    return ProductRepo.getById(id);
+  }
+
+  create(product) {
+    return ProductRepo.put(product);
   }
 }
 
