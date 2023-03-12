@@ -17,6 +17,30 @@ class S3Service {
 
     return await this.s3.getSignedUrlPromise('putObject', params);
   }
+
+  getFileStream(key, bucketName) {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+    };
+
+    return this.s3.getObject(params).createReadStream();
+  }
+
+  async moveFile(srcKey, destKey, bucketName, deleteKey, deleteBucketName) {
+    const copyParams = {
+      CopySource: srcKey,
+      Bucket: bucketName,
+      Key: destKey,
+    };
+    await this.s3.copyObject(copyParams).promise();
+    
+    const deleteParams = {
+      Bucket: deleteBucketName,
+      Key: deleteKey,
+    };
+    await this.s3.deleteObject(deleteParams).promise();
+  }
 }
 
 module.exports = new S3Service();
