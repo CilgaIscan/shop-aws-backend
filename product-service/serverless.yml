@@ -9,6 +9,8 @@ provider:
   environment:
     PRODUCTS_TABLE_NAME: products
     STOCKS_TABLE_NAME: stocks
+    SNS_TOPIC_ARN: 
+      Ref: "CreateProductTopic"
   iam:
     role:
       statements:
@@ -41,6 +43,11 @@ provider:
             - sqs:*
           Resource:
             Fn::GetAtt: [ CatalogItemsQueue, Arn ]
+        - Effect: Allow
+          Action:
+            - sns:Publish
+          Resource:
+            Ref: CreateProductTopic
   httpApi:
     cors: true
 
@@ -79,3 +86,13 @@ resources:
       Type: "AWS::SQS::Queue"
       Properties:
         QueueName: catalogItemsQueue
+    CreateProductTopic:
+      Type: "AWS::SNS::Topic"
+      Properties:
+        TopicName: createProductTopic
+    EmailSubscriptionForCreateProductTopic:
+      Type: "AWS::SNS::Subscription"
+      Properties:
+          Endpoint: cilgaiscan@gmail.com
+          Protocol: email
+          TopicArn: {"Ref": "CreateProductTopic"}
