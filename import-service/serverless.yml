@@ -8,6 +8,7 @@ provider:
   region: eu-central-1
   environment:
     IMPORT_BUCKET_NAME: shop-aws-import
+    QUEUE_URL: "https://sqs.eu-central-1.amazonaws.com/962081227256/catalogItemsQueue"
     REGION_NAME: eu-central-1
   iam:
     role:
@@ -21,6 +22,10 @@ provider:
           Action:
             - "s3:*"
           Resource: "arn:aws:s3:::shop-aws-import/*"
+        - Effect: "Allow"
+          Action:
+            - "sqs:SendMessage"
+          Resource: "arn:aws:sqs:eu-central-1:962081227256:catalogItemsQueue"
   httpApi:
     cors: true
 
